@@ -10,6 +10,7 @@ const schema = Joi.object({
   head: Joi.string().trim().required(),
   body: Joi.string().trim().required(),
   picture_url: Joi.string().uri(),
+  likes: Joi.number()
 });
 
 // READ ALL
