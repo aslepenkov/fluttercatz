@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'My Flutter Demos'),
     );
   }
 }
@@ -44,15 +44,35 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+        child: ListView(
+          padding: EdgeInsets.all(20),
+          children: [
+            Card(
+              elevation: 10,
+              margin: EdgeInsets.all(10),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    'MESSAGE HEAD',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  ),
+                  Text(
+                    'You have pushed the button this many times: You have pushed the button this many times: You have pushed the button this many times:You have pushed the button this many times:',
+                    softWrap: true,
+                    textAlign: TextAlign.justify,
+                    style:
+                        TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Icon(Icons.favorite, color: Colors.red[400]),
+                      Text('1')
+                    ],
+                  )
+                ],
+              ),
             ),
           ],
         ),
